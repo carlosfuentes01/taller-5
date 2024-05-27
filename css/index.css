@@ -114,6 +114,6 @@ body{
 #eventodia{
     background-color: rgb(118, 187, 100);
     height: 30px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+
 }
