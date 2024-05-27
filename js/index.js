@@ -624,11 +624,11 @@ function iniciar() {
 }
 function hallardias() {
     limpiar();
-    lugar="dia"
+    
     delta_fechas=new Date(fechas_actual)
     dias()
     cambioeventos();
-    
+    lugar="dia"
 }
 function colocareventosdia() {
     
@@ -696,6 +696,9 @@ function dias() {
                 contenedoreventos.setAttribute("id","contenedoreventos")
                 var acomulador=1;
                 var listaeventos=JSON.parse(localStorage.getItem("eventos"||"[]"))
+                if (listaeventos.length==0) {
+                    
+                }else{
                 for (let index = 0; index < listaeventos.length; index++) {
                     if (listaeventos[index].year==delta_fechas.getFullYear()
                         &&listaeventos[index].mes==delta_fechas.getMonth()
@@ -713,7 +716,7 @@ function dias() {
                         
                     }
                     
-                }
+                }}
                 hora.appendChild(contenedoreventos)
 
 
