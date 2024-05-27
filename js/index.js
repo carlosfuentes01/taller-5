@@ -24,15 +24,21 @@ function cerrarmodalcrear() {
          lleno=false
         alert("llene los espacios en vacios")
     }else{
+        var controlador= new Date(fechas_actual)
+        if (delta_fechas<controlador) {
+            alert("no puedes crear una alerta de una fecha pasada")
+        }else{
+            
+            delta_fechas.setMinutes(minutos)
+            delta_fechas.setHours(hora)
+            
+            crear()
+            read()
+            descripcion.value=""
+            nombres_participantes.value=""
+        }
         modalcrear.close();
         
-        delta_fechas.setMinutes(minutos)
-        delta_fechas.setHours(hora)
-        
-        crear()
-        read()
-        descripcion.value=""
-        nombres_participantes.value=""
     }
 
 
@@ -404,25 +410,37 @@ function hallarmes() {
 
 function menormes() {
     delta_fechas.setMonth(delta_fechas.getMonth()-1)
+    
     limpiar();
     hallarmes();
-    seleccionar_dia_hoy();
-    cambioeventos();
+    seleccionar_dia_hoy()
+    var controlador=new Date(fechas_actual)
+    seleccionanterior=controlador.getDate()
     seleccion_dia(1);
+    cambioeventos();
 }
 function mayormes() {
     delta_fechas.setMonth(delta_fechas.getMonth()+1)
     limpiar();
     hallarmes();
-    seleccionar_dia_hoy();
-    cambioeventos(delta_fechas);
+    seleccionar_dia_hoy()
+    var controlador=new Date(fechas_actual)
+    seleccionanterior=controlador.getDate()
     seleccion_dia(1);
+    cambioeventos();
+}
+function seleccionar_dia_() {
+    
 }
 function seleccion_dia(id) {
+    console.log(id +"id")
+    console.log(seleccionanterior +"seleccionanterior")
+    console.log(delta_fechas.getDate() +"dia")
     if (!(id=="escogido")) {
         var ss=document.getElementById("escogido")
 ss.removeAttribute("id")
 ss.setAttribute("id",seleccionanterior)
+
 var escogido=document.getElementById(id)
 escogido.setAttribute("id","escogido")
 seleccionanterior=id
@@ -738,3 +756,12 @@ function dias() {
         dias.appendChild(contenedor_dias)
     visualizaciión_eleccion.appendChild(dias)
 }
+function cancelaractualizacion() {
+    var modalactualizar=document.getElementById("modalactualizar")
+    modalactualizar.close();
+}
+function cancelarcrear() {
+    var modalcrear=document.getElementById("modalcrear")
+    modalcrear.close();
+}
+

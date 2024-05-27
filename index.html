@@ -10,7 +10,7 @@
     </script>
     
 </head>
-<body>
+<body id="controlador">
     
     
     <dialog id="modal_inicial">
@@ -63,6 +63,7 @@
                     <textarea name="" id="descripcion" cols="30" rows="10"></textarea>descripción <br>
                     <input type="text" id="nombres_participantes">nombres de participantes <br>
                     <input type="submit" onclick="cerrarmodalcrear()">
+                    <button onclick="cancelarcrear()">cancelar</button>
                 </dialog>
                 <dialog id="modalactualizar">
                     <select name="" id="horaa">
@@ -104,6 +105,7 @@
                     <textarea name="" id="descripciona" cols="30" rows="10"></textarea>descripción <br>
                     <input type="text" id="nombres_participantesa">nombres de participantes <br>
                     <input type="submit" onclick="cerrarmodalactualizar()">
+                    <button onclick="cancelaractualizacion()">cancelar</button>
                 </dialog>
              </div>
             <div class="mostrar">
