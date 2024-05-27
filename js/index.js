@@ -615,15 +615,16 @@ function cambioeventos() {
 
 }
 function iniciar() {
-    var listaeventos=JSON.parse(localStorage.getItem("eventos"||"[]"))
-    var primerevento= new Evento(0,0,0,0,0,0,0);
-    listaeventos.push(primerevento)
-    localStorage.setItem("eventos",JSON.stringify(listaeventos))   
+    
     hallarmes();
     lugar="mes"
     seleccionar_dia_hoy();
     cambioeventos();
     seleccionanterior=delta_fechas.getDate();
+    var eventosparse = JSON.parse(localStorage.getItem("eventos") || "[]"); 
+    var subireventos= new Evento(0,0,0,0,0,"descripcion","nombre");
+    eventosparse.push(subireventos)
+    localStorage.setItem("eventos",JSON.stringify(eventosparse))
     
      //hallar_primer_dia(fechas.getDay())
 }
