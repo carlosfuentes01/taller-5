@@ -614,12 +614,17 @@ function cambioeventos() {
     read()
 
 }
-function iniciar() {   
+function iniciar() {
+    var listaeventos=JSON.parse(localStorage.getItem("eventos"||"[]"))
+    var primerevento= new Evento(0,0,0,0,0,0,0);
+    listaeventos.push(primerevento)
+    localStorage.setItem("eventos",JSON.stringify(listaeventos))   
     hallarmes();
     lugar="mes"
     seleccionar_dia_hoy();
     cambioeventos();
     seleccionanterior=delta_fechas.getDate();
+    
      //hallar_primer_dia(fechas.getDay())
 }
 function hallardias() {
