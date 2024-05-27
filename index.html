@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        
+    </script>
+    
+</head>
+<body>
+    
+    
+    <dialog id="modal_inicial">
+        hola, bienvenido a su calendario <br>
+        <button id="cerrar_modal_inicial" onclick="iniciar()">entrar</button>
+    </dialog>
+        <div class="contenedor_global">
+            <div id="eventos_del_dia">
+                <h2>Eventos</h2>
+                <h3 id="fecha_evento">l</h3>
+                <button id="abrircrearnuevoevento">crear evento</button>
+                <div id="contenedor_eventos"></div>
+                <dialog id="modalcrear">
+                    <select name="" id="hora">
+                        <option value="0">0am</option>
+                        <option value="1">1am</option>
+                        <option value="2">2am</option>
+                        <option value="3">3am</option>
+                        <option value="4">4am</option>
+                        <option value="5">5am</option>
+                        <option value="6">6am</option>
+                        <option value="7">7am</option>
+                        <option value="8">8am</option>
+                        <option value="9">9am</option>
+                        <option value="10">10am</option>
+                        <option value="11">11am</option>
+                        <option value="12">12am</option>
+                        <option value="13">1pm</option>
+                        <option value="14">2pm</option>
+                        <option value="15">3pm</option>
+                        <option value="16">4pm</option>
+                        <option value="17">5pm</option>
+                        <option value="18">6pm</option>
+                        <option value="19">7pm</option>
+                        <option value="20">8pm</option>
+                        <option value="21">9pm</option>
+                        <option value="22">10pm</option>
+                        <option value="23">11pm</option>
+                    </select>
+                    <select name="" id="minutos">
+                        <option value="00">00</option>
+                        <option value="30">30</option>
+                        
+
+                    </select> 
+                    
+                    <br>
+                    
+            
+                    <textarea name="" id="descripcion" cols="30" rows="10"></textarea>descripción <br>
+                    <input type="text" id="nombres_participantes">nombres de participantes <br>
+                    <input type="submit" onclick="cerrarmodalcrear()">
+                </dialog>
+                <dialog id="modalactualizar">
+                    <select name="" id="horaa">
+                        <option value="0">0am</option>
+                        <option value="1">1am</option>
+                        <option value="2">2am</option>
+                        <option value="3">3am</option>
+                        <option value="4">4am</option>
+                        <option value="5">5am</option>
+                        <option value="6">6am</option>
+                        <option value="7">7am</option>
+                        <option value="8">8am</option>
+                        <option value="9">9am</option>
+                        <option value="10">10am</option>
+                        <option value="11">11am</option>
+                        <option value="12">12am</option>
+                        <option value="13">1pm</option>
+                        <option value="14">2pm</option>
+                        <option value="15">3pm</option>
+                        <option value="16">4pm</option>
+                        <option value="17">5pm</option>
+                        <option value="18">6pm</option>
+                        <option value="19">7pm</option>
+                        <option value="20">8pm</option>
+                        <option value="21">9pm</option>
+                        <option value="22">10pm</option>
+                        <option value="23">11pm</option>
+                    </select>
+                    <select name="" id="minutosa">
+                        <option value="00">00</option>
+                        <option value="30">30</option>
+                        
+
+                    </select> 
+                    
+                    <br>
+                    
+            
+                    <textarea name="" id="descripciona" cols="30" rows="10"></textarea>descripción <br>
+                    <input type="text" id="nombres_participantesa">nombres de participantes <br>
+                    <input type="submit" onclick="cerrarmodalactualizar()">
+                </dialog>
+             </div>
+            <div class="mostrar">
+                <div class="botones">
+                    visualización
+                    <button onclick="hallardias()">dia</button>
+                    <button onclick="seleccionmes()">mes</button>
+                    <button onclick="findyear()">año</button>
+                </div>
+                <div id="visualizaciión_eleccion">
+                    
+                </div>
+            </div>
+            
+             
+         </div>
+         <script>
+            var modal_inicial=document.getElementById("modal_inicial")
+            modal_inicial.showModal();
+            var cerrar_modal_inicial=document.getElementById("cerrar_modal_inicial")
+            cerrar_modal_inicial.addEventListener("click",()=>{
+                modal_inicial.close();
+            })
+         </script>
+         <script src="./js/index.js">
+         </script>
+         <script src="./js/eventos.js"></script>
+</body>
+</html>
