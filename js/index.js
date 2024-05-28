@@ -418,6 +418,8 @@ function menormes() {
     seleccionanterior=controlador.getDate()
     seleccion_dia(1);
     cambioeventos();
+    var controla=document.getElementById(controlador.getDate())
+    controla.setAttribute("id",controlador.getDate())
 }
 function mayormes() {
     delta_fechas.setMonth(delta_fechas.getMonth()+1)
@@ -425,9 +427,10 @@ function mayormes() {
     hallarmes();
     seleccionar_dia_hoy()
     var controlador=new Date(fechas_actual)
-    seleccionanterior=controlador.getDate()
     seleccion_dia(1);
     cambioeventos();
+    var controla=document.getElementById(controlador.getDate())
+    controla.setAttribute("id",controlador.getDate())
 }
 function seleccionar_dia_() {
     
