@@ -412,25 +412,27 @@ function menormes() {
     delta_fechas.setMonth(delta_fechas.getMonth()-1)
     
     limpiar();
+    
     hallarmes();
-    seleccionar_dia_hoy()
-    var controlador=new Date(fechas_actual)
-    seleccionanterior=controlador.getDate()
     seleccion_dia(1);
+   
+    
     cambioeventos();
-    var controla=document.getElementById(controlador.getDate())
-    controla.setAttribute("id",controlador.getDate())
+    
 }
 function mayormes() {
     delta_fechas.setMonth(delta_fechas.getMonth()+1)
+    
     limpiar();
+    
     hallarmes();
-    seleccionar_dia_hoy()
-    var controlador=new Date(fechas_actual)
     seleccion_dia(1);
+    
+    
+    
     cambioeventos();
-    var controla=document.getElementById(controlador.getDate())
-    controla.setAttribute("id",controlador.getDate())
+    
+
 }
 function seleccionar_dia_() {
     
@@ -440,9 +442,14 @@ function seleccion_dia(id) {
     console.log(seleccionanterior +"seleccionanterior")
     console.log(delta_fechas.getDate() +"dia")
     if (!(id=="escogido")) {
-        var ss=document.getElementById("escogido")
-ss.removeAttribute("id")
-ss.setAttribute("id",seleccionanterior)
+        if (null==document.getElementById("escogido")) {
+            
+        }else{
+            var ss=document.getElementById("escogido")
+            ss.removeAttribute("id")
+            ss.setAttribute("id",seleccionanterior)
+        }
+        
 
 var escogido=document.getElementById(id)
 escogido.setAttribute("id","escogido")
